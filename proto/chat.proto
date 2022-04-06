@@ -1,0 +1,20 @@
+syntax = "proto3";
+package proto;
+option go_package = "./;api";
+
+message Request{
+  int64 id = 1;
+  string username = 2;
+  string password = 3;
+  bool  active = 4;
+  double gpa = 5;
+}
+
+message Response{
+  int64 status = 1;
+  string message = 2;
+}
+
+service  ChatService{
+ rpc SayHello(Request) returns (Response){}
+}
